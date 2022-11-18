@@ -1,6 +1,6 @@
 const conn = require('./conn');
 const User = require('./User');
-const Distance = require('./Distance');
+const Sport = require('./Sport');
 
 const syncAndSeed = async()=> {
   await conn.sync({ force: true });
@@ -10,12 +10,13 @@ const syncAndSeed = async()=> {
     User.create({ username: 'larry', password: '123' }),
     User.create({ username: 'ethyl', password: '123' }),
   ]);
-  // const [miles, kilometers, meters, yards] = await Promise.all([
-  //   Distance.create({measurement: 'miles'}),
-  //   Distance.create({measurement: 'kilometers'}),
-  //   Distance.create({measurement: 'meters'}),
-  //   Distance.create({measurement: 'yards'}),
-  // ])
+  const [run, ride, swim, hike, walk] = await Promise.all([
+    Sport.create({name: 'Run'}),
+    Sport.create({name: 'Ride'}),
+    Sport.create({name: 'Swim'}),
+    Sport.create({name: 'Hike'}),
+    Sport.create({name: 'Walk'}),
+  ])
 
   return {
     users: {
@@ -23,12 +24,13 @@ const syncAndSeed = async()=> {
       lucy,
       larry
     },
-    // distances: {
-    //   miles,
-    //   kilometers,
-    //   meters,
-    //   yards
-    // }
+    sports: {
+     run,
+     ride,
+     swim,
+     hike,
+     walk
+    }
   };
 };
 

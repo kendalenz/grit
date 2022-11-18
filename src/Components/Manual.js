@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 const Manual = () => {
-  const { distance } = useSelector((state) => state);
-  const [measurement, setMeasurement] = useState('');
+  const { sports } = useSelector((state) => state);
+  const [sport, setSport] = useState('');
   const { id } = useParams();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div>
@@ -34,6 +33,24 @@ const Manual = () => {
         <select>
           <option value='feet'>feet</option>
           <option value='meters'>meters</option>
+        </select>
+      </form>
+      <form>
+        <label form='sport'>Sport</label>
+        <select 
+        value={name}
+        onChange={(ev)=> setSport(ev.target.value)}
+        >
+          <option value=''>Run</option>
+            {
+              sports.map((sport) => {
+                return (
+                  <option value={sport.name}>
+                    {sport.name}
+                  </option>
+                )
+              })
+            }
         </select>
       </form>
 

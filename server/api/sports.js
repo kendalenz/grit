@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express.Router();
-const { Distance } = require('../db');
+const { Sport } = require('../db');
+
+app.use(express.json());
 
 app.get('/', async (req, res, next) => {
     try {
-        const distance = await Distance.findAll();
-        res.send(distance);
+        const sports = await Sport.findAll();
+        res.send(sports);
     }
     catch(err) {
         next(err);

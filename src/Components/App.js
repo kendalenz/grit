@@ -2,16 +2,19 @@ import React, { useEffect } from 'react';
 import Home from './Home';
 import Login from './Login';
 import Manual from './Manual';
-import { useSelector, useDispatch } from 'react-redux';
-import { loginWithToken } from '../store';
-import { Link, Routes, Route } from 'react-router-dom';
+// import Sports from './Sports';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { loginWithToken, fetchSports } from '../store';
+import { Link, Routes, Route } from 'react-router-dom';
+// import { fetchSports } from '../store/sports';
 
 const App = ()=> {
   const { auth } = useSelector(state => state);
   const dispatch = useDispatch();
   useEffect(()=> {
     dispatch(loginWithToken());
+    dispatch(fetchSports());
   }, []);
 
   return (
