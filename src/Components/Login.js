@@ -22,13 +22,13 @@ const Login = ()=> {
       <h2>Login</h2>
       <form onSubmit={ login }>
         <input
-          placeholder='username'
+          placeholder='Username'
           value = { credentials.username }
           name = 'username'
           onChange = { onChange }
           />
         <input
-          placeholder='password'
+          placeholder='Password'
           name = 'password'
           value={ credentials.password }
           onChange = { onChange }

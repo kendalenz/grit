@@ -2,6 +2,10 @@ body {
   font-family: verdana;
 }
 
+#grit_nav {
+  color: #FF4500
+}
+
 form {
   display: flex;
   flex-direction: column;

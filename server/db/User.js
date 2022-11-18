@@ -1,9 +1,8 @@
 const conn = require('./conn');
-const { STRING, UUID, UUIDV4, TEXT, BOOLEAN } = conn.Sequelize;
+const { STRING, UUID, UUIDV4, TEXT, BOOLEAN, DATE, NOW } = conn.Sequelize;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const JWT = process.env.JWT;
-
 
 const User = conn.define('user', {
   id: {
@@ -31,6 +30,19 @@ const User = conn.define('user', {
     allowNull: false,
     defaultValue: false
   },
+  firstName: {
+    type: STRING
+  },
+  lastName: {
+    type: STRING
+  },
+  email: {
+    type: STRING,
+    unique: true
+  },  
+  gender: {
+    type: STRING
+  },
   avatar: {
     type: TEXT,
     get: function(){
@@ -44,6 +56,16 @@ const User = conn.define('user', {
       }
       return `${prefix}${data}`;
     }
+  },
+  createdAT: {
+    // allowNull: false,
+    type: DATE,
+    defaultValue: NOW
+  }, 
+  updatedAT: {
+    // allowNull: false,
+    type: DATE,
+    defaultValue: NOW
   }
 });
 
@@ -112,7 +134,6 @@ User.prototype.removeFromCart = async function({ product, quantityToRemove}){
   }
   return this.getCart();
 };
-
 
 User.addHook('beforeSave', async(user)=> {
   if(user.changed('password')){
