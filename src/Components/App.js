@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import Home from './Home';
 import Login from './Login';
 import Manual from './Manual';
-// import Sports from './Sports';
+import Sport from './Sport';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { loginWithToken, fetchSports } from '../store';
 import { Link, Routes, Route } from 'react-router-dom';
-// import { fetchSports } from '../store/sports';
 
 const App = ()=> {
   const { auth } = useSelector(state => state);
@@ -35,6 +34,7 @@ const App = ()=> {
             <Routes>
               {/* <Route path='/' element={<Home />} /> */}
               <Route path='/manual' element={<Manual />} />
+              <Route path='/sports' element={<Sport />} />
             </Routes>
           </div>
         )
