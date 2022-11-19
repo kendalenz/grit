@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
 import Home from './Home';
 import Login from './Login';
-import Manual from './Manual';
-import Sport from './Sport';
-
+import CreateActivity from './CreateActivity';
 import { useSelector, useDispatch } from 'react-redux';
-import { loginWithToken, fetchSports } from '../store';
+import { loginWithToken, fetchActivities } from '../store';
 import { Link, Routes, Route } from 'react-router-dom';
+
 
 const App = ()=> {
   const { auth } = useSelector(state => state);
   const dispatch = useDispatch();
   useEffect(()=> {
     dispatch(loginWithToken());
-    dispatch(fetchSports());
+    dispatch(fetchActivities());
   }, []);
 
   return (
@@ -28,13 +27,11 @@ const App = ()=> {
             <nav>
               <Link to='/'>Home</Link>
               <div>
-              <Link to='/manual'>Add manual entry</Link>
+              <Link to='/createactivity'>Add manual entry</Link>
               </div>
             </nav>
             <Routes>
-              {/* <Route path='/' element={<Home />} /> */}
-              <Route path='/manual' element={<Manual />} />
-              <Route path='/sports' element={<Sport />} />
+              <Route path='/createactivity' element={<CreateActivity />} />
             </Routes>
           </div>
         )

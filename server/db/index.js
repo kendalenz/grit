@@ -1,22 +1,16 @@
 const conn = require('./conn');
 const User = require('./User');
-const Sport = require('./Sport');
+const Activity = require('./Activity');
 
 const syncAndSeed = async()=> {
   await conn.sync({ force: true });
-  const [moe, lucy, larry, ethyl] = await Promise.all([
+  const [moe, lucy, larry, ethyl, activity1] = await Promise.all([
     User.create({ username: 'moe', password: '123'}),
     User.create({ username: 'lucy', password: '123' }),
     User.create({ username: 'larry', password: '123' }),
     User.create({ username: 'ethyl', password: '123' }),
+    Activity.create({description: 'Quick 4 miles after class'})
   ]);
-  const [run, ride, swim, hike, walk] = await Promise.all([
-    Sport.create({name: 'Run'}),
-    Sport.create({name: 'Ride'}),
-    Sport.create({name: 'Swim'}),
-    Sport.create({name: 'Hike'}),
-    Sport.create({name: 'Walk'}),
-  ])
 
   return {
     users: {
@@ -24,18 +18,14 @@ const syncAndSeed = async()=> {
       lucy,
       larry
     },
-    sports: {
-     run,
-     ride,
-     swim,
-     hike,
-     walk
+    activities: {
+      activity1
     }
   };
 };
 
-
 module.exports = {
   syncAndSeed,
   User,
+  Activity
 };

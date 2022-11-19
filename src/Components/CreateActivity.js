@@ -1,22 +1,46 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+import { createActivity } from '../store/activities';
 // import moment, { Moment } from 'moment';
 // import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 // import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 // import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import Sport from './Sport'
 
-const Manual = () => {
-  const { sports, activities } = useSelector((state) => state);
-  // const [sport, setSport] = useState('');
-  const [distance, setDistance] = useState('');
-  const { id } = useParams();
+const CreateActivity = () => {
+  // const { activities } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [activity, setActivity] = useState({
+    distance: ''
+  });
+
+  const [error, setError] = useState({});
+
+  // const [distance, setDistance] = useState('');
+  // const { id } = useParams();
   // const navigate = useNavigate();
 
-  const save = (ev)=> {
+  const onChange = (ev) => {
+    setActivity({ ...activity, [ev.target.name]: ev.target.value });
+  };
+
+  const create = async (ev) => {
     ev.preventDefault();
-    dispatch(createActivity({distance}))
+    try {
+      await dispatch(createActivity(activity, navigate));
+    } catch (err) {
+      setError(err.response.data);
+    }
+  };
+
+  let messages = [];
+
+  if(error.errors) {
+    messages = error.errors.map((e) => e.message);
+  } else if(error.status) {
+    messages.push(error.status);
   };
 
   return (
@@ -51,7 +75,6 @@ const Manual = () => {
       </div>
       </div> */}
       {/* <hr></hr> */}
-      {/* <Sport /> */}
       {/* <form>
         <label form='sport'>Sport</label>
         <select>
@@ -67,11 +90,12 @@ const Manual = () => {
         <input></input>
         <input></input>
       </form> */}
-      <form onSubmit={save}>
+      <form onSubmit={create}>
         <label>Description</label>
         <textarea 
-          value={description}
-          onChange={ev => setDistance(ev.target.value)}>
+          name='description'
+          value={activity.description}
+          onChange={onChange}>
         </textarea>
       </form>
       {/* <hr></hr>
@@ -118,4 +142,4 @@ const Manual = () => {
 //   );
 // }
 
-export default Manual;
+export default CreateActivity;
