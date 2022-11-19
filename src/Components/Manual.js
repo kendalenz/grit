@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import moment, { Moment } from 'moment';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+// import moment, { Moment } from 'moment';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+// import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import Sport from './Sport'
 
 const Manual = () => {
-  const { sports } = useSelector((state) => state);
+  const { sports, activities } = useSelector((state) => state);
   // const [sport, setSport] = useState('');
+  const [distance, setDistance] = useState('');
   const { id } = useParams();
   // const navigate = useNavigate();
+
+  const save = (ev)=> {
+    ev.preventDefault();
+    dispatch(createActivity({distance}))
+  };
 
   return (
     <div id='manual-page'>
       <h1>Manual Entry</h1>
-      <div id='section-one'>
+      {/* <div id='section-one'>
         <div id='measurments'>
       <form id='dist-div'>
       <label>Distance</label>
@@ -43,10 +49,10 @@ const Manual = () => {
         </select>
       </form>
       </div>
-      </div>
-      <hr></hr>
+      </div> */}
+      {/* <hr></hr> */}
       {/* <Sport /> */}
-      <form>
+      {/* <form>
         <label form='sport'>Sport</label>
         <select>
           <option>Run</option> 
@@ -60,12 +66,15 @@ const Manual = () => {
         <label>Date & Time</label>
         <input></input>
         <input></input>
-      </form>
-      <form>
+      </form> */}
+      <form onSubmit={save}>
         <label>Description</label>
-        <textarea></textarea>
+        <textarea 
+          value={description}
+          onChange={ev => setDistance(ev.target.value)}>
+        </textarea>
       </form>
-      <hr></hr>
+      {/* <hr></hr>
       <div id='type-shoes-forms'>
       <form>
       <label>Type of Run</label>
@@ -95,7 +104,7 @@ const Manual = () => {
           id="myRange">
         </input>
       </div>
-      <hr></hr>
+      <hr></hr> */}
       <button>Create</button>
   </div>
   );
