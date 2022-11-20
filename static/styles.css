@@ -1,10 +1,38 @@
-body {
-  font-family: verdana;
-  margin: 2rem;
+
+#grit-logo {
+  color: #FF4500;
+  margin-right: 4rem;
 }
 
-#grit_nav {
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+}
+
+#nav-links {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 2rem
+}
+
+a {
+  color: #505050;
+  text-decoration: none;
+}
+
+a:hover {
   color: #FF4500
+}
+
+body {
+  font-family: verdana;
+  font-weight: lighter;
+  margin: 0;
+  background-color: #F8F8F8;
 }
 
 form {
@@ -19,6 +47,7 @@ form > * {
 nav {
   display: flex;
   justify-content: space-around;
+  color: #DCDCDC;
 }
 
 button {
@@ -65,6 +94,16 @@ button {
 #type-shoes-forms {
   display: flex;
   flex-direction: row;
+}
+
+#activity-card {
+  max-width: 30%;
+  padding: 2rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: white;
+  border-radius: 5px;
 }
 /* #measurements {
   display: flex;

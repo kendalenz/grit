@@ -4,9 +4,8 @@ import Login from './Login';
 import CreateActivity from './CreateActivity';
 import Activities from './Activities';
 import { useSelector, useDispatch } from 'react-redux';
-import { loginWithToken, fetchActivities } from '../store';
+import { loginWithToken, fetchActivities, logout } from '../store';
 import { Link, Routes, Route } from 'react-router-dom';
-
 
 const App = ()=> {
   const { auth } = useSelector(state => state);
@@ -18,7 +17,7 @@ const App = ()=> {
 
   return (
     <div>
-      <h1 id='grit_nav'>GRIT</h1>
+      {/* <h1 id='grit_nav'>GRIT</h1> */}
       {
         auth.id ? <Home /> : <Login />
       }
@@ -26,9 +25,17 @@ const App = ()=> {
         !!auth.id  && (
           <div>
             <nav>
-              <Link to='/'>Home</Link>
-              <div>
+              <div id='grit-nav'>
+                <Link to="/">
+                  <h1 id='grit-logo'>GRIT</h1>
+                </Link>
+              </div>
+              <div id='nav-links'>
+              <Link to='/'>Dashboard</Link>
               <Link to='/createactivity'>Add manual entry</Link>
+              <Link to="#" onClick={() => dispatch(logout())}>
+                Logout
+              </Link>
               </div>
             </nav>
             <Routes>

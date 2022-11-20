@@ -9,8 +9,7 @@ const Home = ()=> {
     <div>
       {/* <h1>Grit</h1> */}
       <div>
-        Welcome { auth.username }!!
-        <button onClick={()=> dispatch(logout())}>Logout</button>
+        {/* <button onClick={()=> dispatch(logout())}>Logout</button> */}
       </div>
     </div>
   );
