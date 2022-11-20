@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { createActivity } from '../store/activities';
 // import moment, { Moment } from 'moment';
 // import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -8,31 +8,33 @@ import { createActivity } from '../store/activities';
 // import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 const CreateActivity = () => {
-  // const { activities } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [activity, setActivity] = useState({
-    distance: ''
-  });
+  // const [activity, setActivity] = useState({
+  //   description: ''
+  // });
+
+  const [description, setDescription] = useState('');
 
   const [error, setError] = useState({});
 
-  // const [distance, setDistance] = useState('');
-  // const { id } = useParams();
-  // const navigate = useNavigate();
+  // const onChange = (ev) => {
+  //   setActivity({ ...activity, [ev.target.name]: ev.target.value });
+  // };
 
-  const onChange = (ev) => {
-    setActivity({ ...activity, [ev.target.name]: ev.target.value });
-  };
+  // const create = (ev) => {
+  //   ev.preventDefault();
+  //   try {
+  //     dispatch(createActivity(activity, navigate));
+  //   } catch (err) {
+  //     setError(err.response.data);
+  //   }
+  // };
 
-  const create = async (ev) => {
+  const create = (ev) => {
     ev.preventDefault();
-    try {
-      await dispatch(createActivity(activity, navigate));
-    } catch (err) {
-      setError(err.response.data);
-    }
+    dispatch(createActivity({description}, navigate))
   };
 
   let messages = [];
@@ -94,9 +96,10 @@ const CreateActivity = () => {
         <label>Description</label>
         <textarea 
           name='description'
-          value={activity.description}
-          onChange={onChange}>
+          value={description}
+          onChange={ev => setDescription(ev.target.value)}>
         </textarea>
+        <button>Create</button>
       </form>
       {/* <hr></hr>
       <div id='type-shoes-forms'>
@@ -129,7 +132,12 @@ const CreateActivity = () => {
         </input>
       </div>
       <hr></hr> */}
-      <button>Create</button>
+      <div>
+       {messages.map((message) => {
+            return <li key={message}>{message}</li>;
+          })}
+      </div>
+     
   </div>
   );
 };

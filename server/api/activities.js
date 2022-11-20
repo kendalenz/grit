@@ -15,7 +15,7 @@ app.get('/', async (req, res, next) => {
 
   app.post('/', async (req, res, next) => {
     try {
-      res.send(await Activity.create(req.body));
+      res.status(201).send(await Activity.create(req.body));
     } catch (err) {
       next(err);
     }
