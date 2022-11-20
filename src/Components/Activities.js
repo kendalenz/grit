@@ -29,14 +29,16 @@ const Activities = () => {
   };
 
   return (
-    <div>
+    <div id='activitycard-div'>
         {
             activities.map((activity) => (
+                <div id='test'>
                 <ActivityCard
                   id={activity.id}
                   key={activity.id}
                   description={activity.description}
                 />
+                </div>
             ))
         }
     </div>

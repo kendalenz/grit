@@ -2,6 +2,7 @@
 #grit-logo {
   color: #FF4500;
   margin-right: 4rem;
+  margin-left: 4rem;
 }
 
 nav {
@@ -16,7 +17,8 @@ nav {
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  gap: 2rem
+  gap: 2rem;
+  margin-right: 4rem;
 }
 
 a {
@@ -34,6 +36,7 @@ body {
   margin: 0;
   background-color: #F8F8F8;
 }
+
 
 form {
   display: flex;
@@ -97,7 +100,7 @@ button {
 }
 
 #activity-card {
-  max-width: 30%;
+  width: 30rem;
   padding: 2rem;
   margin-top: 1rem;
   margin-left: 1rem;
@@ -105,6 +108,17 @@ button {
   background-color: white;
   border-radius: 5px;
 }
+
+#activitycard-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* 
+#test {
+  justify-content: center;
+} */
 /* #measurements {
   display: flex;
   flex-wrap: wrap;
