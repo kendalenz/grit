@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Home from './Home';
 import Login from './Login';
 import CreateActivity from './CreateActivity';
+import Activities from './Activities';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginWithToken, fetchActivities } from '../store';
 import { Link, Routes, Route } from 'react-router-dom';
@@ -31,6 +32,7 @@ const App = ()=> {
               </div>
             </nav>
             <Routes>
+              <Route path='/' element={<Activities />}></Route>
               <Route path='/createactivity' element={<CreateActivity />} />
             </Routes>
           </div>

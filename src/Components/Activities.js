@@ -43,4 +43,4 @@ const Activities = () => {
   );
 };
 
-export default Books;
+export default Activities;
