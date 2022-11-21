@@ -25,6 +25,16 @@ const Activities = () => {
       <div id='user-info'>
         <User />
       </div>
+      <div id='deals-container'>
+      <div id='deals'>
+        <div id='one-month-heading'>
+          <h1><span id='one-month'>1 Month</span> on Us</h1>
+        </div>
+          <h3>Redeem your free trial</h3>
+          <p>Try our best features! Get deeper analysis, discover new routes & imporve your fitness</p>
+          <button id='start-trial-button'>Start Your Free Trial</button>
+      </div>
+      </div>
      <div id='activitycard-div'>
       {
         activities.map((activity) => (
