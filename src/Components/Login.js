@@ -18,7 +18,8 @@ const Login = ()=> {
     dispatch(attemptLogin(credentials));
   };
   return (
-    <div>
+    <div id='login-page'>
+      {/* <img src='../static/Grit_login_photo.jpeg'/> */}
       <h2>Login</h2>
       <form onSubmit={ login }>
         <input

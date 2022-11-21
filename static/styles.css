@@ -37,6 +37,14 @@ body {
   background-color: #F8F8F8;
 }
 
+#login-page {
+  display: flex;
+  /* justify-content: center; */
+  background-image: url('../static/Grit_login_photo.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
 
 form {
   display: flex;
@@ -45,7 +53,7 @@ form {
 
 form > * {
   margin: 1rem;
-}
+} 
 
 nav {
   display: flex;
@@ -65,11 +73,30 @@ button {
 #manual-page {
   display: flex;
   margin: 1rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.label {
+  margin-right: 1rem;
+}
+
+.input {
+  margin-bottom: 1rem;
+}
+
+.select {
+  margin-bottom: 1rem;
+}
+
+hr {
+  /* height: 1px; */
+  /* background-color: #989898; */
+  border-color: whitesmoke;
 }
 
 #section-one {
   display: flex;
-  /* width: 100%; */
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
@@ -116,14 +143,4 @@ button {
   align-items: center;
   flex-direction: column;
 }
-/* 
-#test {
-  justify-content: center;
-} */
-/* #measurements {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  flex-direction: column;
-} */
 

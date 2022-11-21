@@ -8,7 +8,7 @@ const CreateRoute = () => {
     useEffect(()=> {
         console.log(el.current);
         const map = new google.maps.Map(el.current, {
-            center: { lat: 40.6782, lng: 73.9442 },
+            center: { lat: 40.6782, lng: -73.9442 },
             zoom: 8,
           });
     }, [el]);

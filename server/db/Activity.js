@@ -10,9 +10,12 @@ const Activity = conn.define('activity', {
     title: {
         type: STRING
     },
-    // distance: {
-    //     type: DECIMAL,
-    // },
+    distance: {
+        type: DECIMAL,
+    },
+    measurement: {
+        type: STRING
+    },
     // Duration: {
     //     type: NUMBER
     // },

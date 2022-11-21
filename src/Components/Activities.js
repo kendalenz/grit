@@ -21,6 +21,11 @@ const Activities = () => {
         {/* <br></br> */}
         {/* <Link to={`/books/${props.id}`}> */}
           {props.description}
+          <br></br>
+          <br></br>
+          <font size='1'>Distance</font>
+          <br></br>
+          <font size='+2'>{props.distance} {props.measurement}</font>
         {/* </Link> */}
         {/* <strong>{props.author}</strong>
         <br></br>
@@ -39,6 +44,8 @@ const Activities = () => {
                   key={activity.id}
                   title={activity.title}
                   description={activity.description}
+                  distance={activity.distance}
+                  measurement={activity.measurement}
                 />
                 </div>
             ))
