@@ -7,6 +7,9 @@ const Activity = conn.define('activity', {
         primaryKey: true, 
         defaultValue: UUIDV4
     },
+    title: {
+        type: STRING
+    },
     // distance: {
     //     type: DECIMAL,
     // },

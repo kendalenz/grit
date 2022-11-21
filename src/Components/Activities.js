@@ -10,6 +10,7 @@ const Activities = () => {
   const ActivityCard = (props) => {
     return (
       <div id='activity-card'>
+        <h3>{props.title}</h3>
         {/* <a href={`#/books/${props.id}`}>
           <img
             src={props.imageUrl}
@@ -19,7 +20,7 @@ const Activities = () => {
         </a> */}
         {/* <br></br> */}
         {/* <Link to={`/books/${props.id}`}> */}
-          <strong>{props.description}</strong>
+          {props.description}
         {/* </Link> */}
         {/* <strong>{props.author}</strong>
         <br></br>
@@ -36,6 +37,7 @@ const Activities = () => {
                 <ActivityCard
                   id={activity.id}
                   key={activity.id}
+                  title={activity.title}
                   description={activity.description}
                 />
                 </div>

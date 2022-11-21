@@ -62,9 +62,10 @@ button {
   border-radius: 5px;
 }
 
-/* manual-page {
+#manual-page {
   display: flex;
-} */
+  margin: 1rem;
+}
 
 #section-one {
   display: flex;

@@ -9,7 +9,7 @@ const syncAndSeed = async()=> {
     User.create({ username: 'lucy', password: '123' }),
     User.create({ username: 'larry', password: '123' }),
     User.create({ username: 'ethyl', password: '123' }),
-    Activity.create({description: 'Quick 4 miles after class'})
+    Activity.create({title: 'Afternoon Run', description: 'Quick 4 miles after class'})
   ]);
 
   return {

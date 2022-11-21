@@ -11,26 +11,8 @@ const CreateActivity = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const [activity, setActivity] = useState({
-  //   description: ''
-  // });
-
   const [description, setDescription] = useState('');
-
   const [error, setError] = useState({});
-
-  // const onChange = (ev) => {
-  //   setActivity({ ...activity, [ev.target.name]: ev.target.value });
-  // };
-
-  // const create = (ev) => {
-  //   ev.preventDefault();
-  //   try {
-  //     dispatch(createActivity(activity, navigate));
-  //   } catch (err) {
-  //     setError(err.response.data);
-  //   }
-  // };
 
   const create = (ev) => {
     ev.preventDefault();
@@ -48,9 +30,10 @@ const CreateActivity = () => {
   return (
     <div id='manual-page'>
       <h1>Manual Entry</h1>
-      {/* <div id='section-one'>
+      <form onSubmit={create}>
+      <div id='section-one'>
         <div id='measurments'>
-      <form id='dist-div'>
+      <div id='dist-div'>
       <label>Distance</label>
       <input></input>
         <select>
@@ -59,25 +42,25 @@ const CreateActivity = () => {
           <option value='meters'>meters</option>
           <option value='yards'>yards</option>
         </select>
-      </form>
-      <form id='duration-div'>
+      </div>
+      <div id='duration-div'>
         <label>Duration</label>
         <input placeholder='01 hr'></input>
         <input placeholder='00 min'></input>
         <input placeholder='00 s'></input>
-      </form>
-      <form id='elevation-form'>
+      </div>
+      <div id='elevation-form'>
         <label>Elevation</label>
         <input></input>
         <select>
           <option value='feet'>feet</option>
           <option value='meters'>meters</option>
         </select>
-      </form>
       </div>
-      </div> */}
-      {/* <hr></hr> */}
-      {/* <form>
+      </div>
+      </div> 
+     <hr></hr> 
+      <div>
         <label form='sport'>Sport</label>
         <select>
           <option>Run</option> 
@@ -86,22 +69,21 @@ const CreateActivity = () => {
           <option>Hike</option> 
           <option>Walk</option> 
         </select>
-      </form>
-      <form id='date-time-form'>
+      </div>
+      <div id='date-time-form'>
         <label>Date & Time</label>
         <input></input>
         <input></input>
-      </form> */}
-      <form onSubmit={create}>
+      </div>
+      <div >
         <label>Description</label>
         <textarea 
           name='description'
           value={description}
           onChange={ev => setDescription(ev.target.value)}>
         </textarea>
-        <button>Create</button>
-      </form>
-      {/* <hr></hr>
+      </div>
+      <hr></hr>
       <div id='type-shoes-forms'>
       <form>
       <label>Type of Run</label>
@@ -131,13 +113,14 @@ const CreateActivity = () => {
           id="myRange">
         </input>
       </div>
-      <hr></hr> */}
+      <hr></hr>
+        <button>Create</button>
+      </form>
       <div>
        {messages.map((message) => {
             return <li key={message}>{message}</li>;
           })}
       </div>
-     
   </div>
   );
 };
