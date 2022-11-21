@@ -32,7 +32,7 @@ const CreateActivity = () => {
 
   return (
     <div id='manual-page'>
-      <h1>Manual Entry</h1>
+      <h1 id='manual-entry'>Manual Entry</h1>
       <form onSubmit={create}>
         <div id='section-one'>
           <div id='measurments'>
@@ -73,28 +73,29 @@ const CreateActivity = () => {
           </div>
         </div> 
         <hr></hr> 
-        <div>
+        <div id='section-two'>
+        <div id='sport-date-div'>
           <label className='label'>Sport</label>
-          <select className='select'>
+          <select id='sport-select' className='select'>
             <option>Run</option> 
             <option>Ride</option> 
             <option>Swim</option> 
             <option>Hike</option> 
             <option>Walk</option> 
           </select>
-        </div>
-        <div id='date-time-form'>
+        {/* <div id='date-time-form'> */}
           <label className='label'>Date & Time</label>
           <input className='input'></input>
           <input className='input'></input>
         </div>
-        <label>Title</label>
+        <label id='title-lable' className='label'>Title</label>
           <input
+          id='title-input'
           name='title'
           value={title}
           onChange={ev => setTitle(ev.target.value)}>
           </input>
-        <div >
+        <div id='description-div'>
           <label className='label'>Description</label>
           <textarea 
             name='description'
@@ -102,11 +103,12 @@ const CreateActivity = () => {
             onChange={ev => setDescription(ev.target.value)}>
           </textarea>
         </div>
+        </div>
         <hr></hr>
         <div id='type-shoes-forms'>
       <div>
       <label className='label'>Type of Run</label>
-        <select className='select'>
+        <select id='sport-select'className='select'>
           <option value=''></option>
           <option value='race'>Race</option>
           <option value='long-run'>Long Run</option>
@@ -119,10 +121,10 @@ const CreateActivity = () => {
       </div>
       </div>
       <div>
-        <label>Private Notes</label>
+      <div id='private-notes-div'>
+        <label className='label'>Private Notes</label>
         <textarea></textarea>
-      </div>
-      <div className="slidecontainer">
+        <div className="slidecontainer">
         <input 
           type="range" 
           min="1" 
@@ -131,6 +133,9 @@ const CreateActivity = () => {
           className="slider" 
           id="myRange">
         </input>
+      </div>
+      </div>
+    
       </div>
       <hr></hr>
         <button><strong>Create</strong></button>

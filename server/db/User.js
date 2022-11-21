@@ -43,20 +43,23 @@ const User = conn.define('user', {
   gender: {
     type: STRING
   },
-  avatar: {
-    type: TEXT,
-    get: function(){
-      const prefix = 'data:image/png;base64,';
-      const data = this.getDataValue('avatar');
-      if(!data){
-        return data;
-      }
-      if(data.startsWith(prefix)){
-        return data;
-      }
-      return `${prefix}${data}`;
-    }
+  profileImage: {
+    type: STRING
   },
+  // avatar: {
+  //   type: TEXT,
+  //   get: function(){
+  //     const prefix = 'data:image/png;base64,';
+  //     const data = this.getDataValue('avatar');
+  //     if(!data){
+  //       return data;
+  //     }
+  //     if(data.startsWith(prefix)){
+  //       return data;
+  //     }
+  //     return `${prefix}${data}`;
+  //   }
+  // },
   createdAT: {
     // allowNull: false,
     type: DATE,

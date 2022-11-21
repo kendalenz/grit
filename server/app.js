@@ -12,5 +12,6 @@ app.get('/', (req, res)=> res.render(path.join(__dirname, '../static/index.html'
 app.use('/api/auth', require('./api/auth'));
 app.use('/api/activities', require('./api/activities'));
 app.use('/api/createroute', require('./api/createroute'));
+app.use('/api/users', require('./api/users'));
 
 module.exports = app;

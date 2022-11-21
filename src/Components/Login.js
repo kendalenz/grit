@@ -19,23 +19,31 @@ const Login = ()=> {
   };
   return (
     <div id='login-page'>
-      {/* <img src='../static/Grit_login_photo.jpeg'/> */}
-      <h2>Login</h2>
-      <form onSubmit={ login }>
+      <nav id='login-nav'>
+        <h1 id='grit-logo'>GRIT</h1>
+      </nav>
+      <div id='login-info'>
+      <div id='login'>
+        <h2 id='login-heading'>Login</h2>
+      </div>
+      <form id='login-form' onSubmit={ login }>
         <input
+          className='login-input'
           placeholder='Username'
           value = { credentials.username }
           name = 'username'
           onChange = { onChange }
           />
         <input
+          className='login-input'
           placeholder='Password'
           name = 'password'
           value={ credentials.password }
           onChange = { onChange }
         />
-        <button>Login</button>
+        <button id='login-button'><strong>Login</strong></button>
       </form>
+      </div>
     </div>
   );
 };
