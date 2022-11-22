@@ -1,14 +1,35 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import User from './User';
+import { useEffect } from 'react';
+import { loginWithToken, fetchActivities, fetchUsers } from '../store';
+
 
 const Activities = () => {
   const { activities, users } = useSelector((state) => state);
+  
+  const { auth } = useSelector(state => state);
+  const dispatch = useDispatch();
+  
+  useEffect(()=> {
+    dispatch(loginWithToken());
+    dispatch(fetchActivities());
+    dispatch(fetchUsers());
+  }, []);
+
+  const findUserById = (searchId) => {
+    const search = users.find(({ id }) => id === searchId);
+    if (!search) {
+      return null;
+    } else {
+      return search.firstName;
+    }
+  };
 
   const ActivityCard = (props) => {
     return (
       <div id='activity-card'>
-        {/* {props.user.firstName} {props.user.lastName} */}
+        {auth.username}         
         <h3>{props.title}</h3>
         {props.description}
         <br></br>
@@ -21,9 +42,15 @@ const Activities = () => {
   };
 
   return (
-    <div>
+    <div id='activity-page'>
+      <div id='user-info-div'>
       <div id='user-info'>
-        <User />
+        <User 
+        profileImage={auth.profileImage}
+          firstName={auth.firstName}
+          lastName={auth.lastName}
+        />
+      </div>
       </div>
       <div id='deals-container'>
       <div id='deals'>
@@ -40,6 +67,7 @@ const Activities = () => {
         activities.map((activity) => (
           <div id='test'>
             <ActivityCard
+
               id={activity.id}
               key={activity.id}
               // firstName={activity.user.firstName}

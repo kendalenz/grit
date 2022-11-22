@@ -262,6 +262,19 @@ textarea {
   width: 10rem;
 }
 
+#usercard-div {
+  width: 15rem;
+  background-color: white;
+  border-radius: 5px;
+
+}
+
+#user-info-div {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
 #activity-card {
   width: 30rem;
   padding: 2rem;
@@ -311,3 +324,32 @@ textarea {
 #mode-label {
   margin-right: 1rem;
 }
+
+#profile-image {
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+}
+
+#usercard-div {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  font-size: 20;
+}
+
+#side-nav {
+  width: 15rem;
+  position: fixed;
+  z-index: 1;
+  top: 10.5rem;
+  left: 25rem;
+  background: white;
+  overflow-x: hidden;
+  padding: 8px 0;
+  padding: 1rem;
+  border-radius: 5px;;
+}
+/* #activity-page {
+  display: flex;
+  flex-direction: column;
+} */

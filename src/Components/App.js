@@ -12,6 +12,8 @@ import { Link, Routes, Route } from 'react-router-dom';
 const App = ()=> {
   const { auth } = useSelector(state => state);
   const dispatch = useDispatch();
+  console.log(auth);
+
   useEffect(()=> {
     dispatch(loginWithToken());
     dispatch(fetchActivities());
@@ -37,7 +39,7 @@ const App = ()=> {
               <Link to='/'>Dashboard</Link>
               <Link to='/createactivity'>Add manual entry</Link>
               <Link to='/createroute'>Create route</Link>
-              <Link to={`/users/${auth.id}`}>Account</Link>
+              {/* <Link to={`/users/${auth.id}`}>Account</Link> */}
               <Link to="#" onClick={() => dispatch(logout())}>
                 Logout
               </Link>
@@ -47,8 +49,12 @@ const App = ()=> {
               <Route path='/' element={<Activities />}></Route>
               <Route path='/createactivity' element={<CreateActivity />} />
               <Route path='/createroute' element={<CreateRoute />} />
-              <Route path='/users/:id' element={<User />} />
-              <Route path='/users/:id' element={<Activities />} />
+              <Route path='/users/:id' element={<User 
+                profileImage={auth.profileImage}
+                firstName={auth.firstName}
+                lastName={auth.lastName}
+              />} />
+              {/* <Route path='/' element={<User />} /> */}
 
             </Routes>
           </div>

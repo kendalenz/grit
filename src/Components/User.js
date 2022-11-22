@@ -4,40 +4,48 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const User = () => {
+const User = (props) => {
   const { users } = useSelector((state) => state);
   const { id } = useParams();
 
   const user = users.find((user) => user.id === id);
 
-  if (!user) return <h1>...loading</h1>;
+//   if (!user) return <h1>...loading</h1>;
 
-  const UserCard = (props) => {
-    return (
-        <div id='user-card'>
-            <img
-            src={props.profileImage}
-            ></img>
-            <h3>{props.firstName} {props.lastName}</h3>
-        </div>
-    );
-  };
+//   const UserCard = (props) => {
+//     return (
+//         <div id='user-card'>
+//             <img id='profile-image'
+//             src={props.profileImage}
+//             ></img>
+//             <h3>{props.firstName} {props.lastName}</h3>
+//         </div>
+//     );
+//   };
 
   return (
     <div>
      <div id='usercard-div'>
-      {
-        users.map((user) => (
-          <div id='usercard-div-2'>
-            <UserCard
-               id={user.id}
-               key={user.id}
-               profileImage={user.profileImage}
-               firstName={user.firstName}
-               lastName={user.lastName}
-            />
-          </div>
-        ))
+      { 
+        <div id='side-nav'>
+           {/* {user.id}
+            {user.id} */}
+         <img id='profile-image'
+           src={props.profileImage}
+            ></img>
+            <h3>{props.firstName} {props.lastName}</h3>
+            <hr></hr>
+           </div>
+        // users.map((user) => (
+        //   <div id='usercard-div-2'>
+        //     {/* {user.id}
+        //     {user.id} */}
+        //     <img id='profile-image'
+        //     src={user.profileImage}
+        //     ></img>
+        //     <h3>{props.firstName} {props.lastName}</h3>
+        //   </div>
+        // ))
       }
     </div>
    </div>
