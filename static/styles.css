@@ -279,3 +279,35 @@ textarea {
   flex-direction: column;
 }
 
+#map {
+  height: 100%;
+}
+
+#create-route-page {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ #floating-panel {
+  position: absolute;
+  padding: 1rem;
+  z-index: 5;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 30px;
+  padding-left: 10px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: .5rem;
+  margin-left: .5rem;
+  width: 15rem;
+} 
+
+.float-input {
+  margin-bottom: 1rem;
+}
+
+#mode-label {
+  margin-right: 1rem;
+}

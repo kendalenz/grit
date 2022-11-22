@@ -14,7 +14,7 @@ const syncAndSeed = async()=> {
     User.create({ username: 'ethyl', password: '123' }),
   ]);
   const [activity1] = await Promise.all([
-    Activity.create({ userId: lucy.id, title: 'Afternoon Run', description: 'Quick 4 miles after class', distance: '6.0'})
+    Activity.create({ userId: lucy.id, title: 'Afternoon Run', description: 'Quick 4 miles after class', distance: '6.0', measurement: 'miles'})
   ]);
 
   return {

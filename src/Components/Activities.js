@@ -31,7 +31,7 @@ const Activities = () => {
           <h1><span id='one-month'>1 Month</span> on Us</h1>
         </div>
           <h3>Redeem your free trial</h3>
-          <p>Try our best features! Get deeper analysis, discover new routes & imporve your fitness</p>
+          <p>Try our best features! Get deeper analysis, discover new routes & improve your fitness</p>
           <button id='start-trial-button'>Start Your Free Trial</button>
       </div>
       </div>
