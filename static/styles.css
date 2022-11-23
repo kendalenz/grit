@@ -229,7 +229,7 @@ textarea {
 #deals {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
     width: 30rem;
     padding: 2rem;
     margin-top: 1rem;
@@ -242,7 +242,9 @@ textarea {
 #deals-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-right: 18rem;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
 }
 
 #one-month-heading {
@@ -266,7 +268,8 @@ textarea {
   width: 15rem;
   background-color: white;
   border-radius: 5px;
-
+  display: flex;
+align-content: center;
 }
 
 #user-info-div {
@@ -329,27 +332,39 @@ textarea {
   border-radius: 50%;
   height: 5rem;
   width: 5rem;
+  margin-right: 1rem;
 }
 
 #usercard-div {
   margin-top: 5rem;
-  margin-left: 5rem;
+  margin-left: 1rem;
   font-size: 20;
+  padding: 1rem;
+  display: flex;
 }
 
-#side-nav {
-  width: 15rem;
-  position: fixed;
-  z-index: 1;
-  top: 10.5rem;
-  left: 25rem;
-  background: white;
-  overflow-x: hidden;
-  padding: 8px 0;
-  padding: 1rem;
-  border-radius: 5px;;
+#photo-nav {
+  display: flex;
+  flex-direction: row;
 }
-/* #activity-page {
+ #side-nav {
   display: flex;
   flex-direction: column;
+  align-content: center;
+} 
+/* 
+#user-div {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  align-self: center;
 } */
+
+#activity-page {
+  display: flex;
+  flex-direction: column;
+}
+
+#follower-info {
+  font-size: 12;
+}

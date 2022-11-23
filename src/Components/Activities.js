@@ -44,15 +44,22 @@ const Activities = () => {
   return (
     <div id='activity-page'>
       <div id='user-info-div'>
-      <div id='user-info'>
+      {/* <div id='user-info'>
         <User 
         profileImage={auth.profileImage}
           firstName={auth.firstName}
           lastName={auth.lastName}
         />
-      </div>
+      </div> */}
       </div>
       <div id='deals-container'>
+        <div id='user-div'>
+      <User 
+          profileImage={auth.profileImage}
+          firstName={auth.firstName}
+          lastName={auth.lastName}
+        />
+        </div>
       <div id='deals'>
         <div id='one-month-heading'>
           <h1><span id='one-month'>1 Month</span> on Us</h1>

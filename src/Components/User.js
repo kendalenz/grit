@@ -30,11 +30,15 @@ const User = (props) => {
         <div id='side-nav'>
            {/* {user.id}
             {user.id} */}
+            <div id='photo-name'>
          <img id='profile-image'
            src={props.profileImage}
             ></img>
-            <h3>{props.firstName} {props.lastName}</h3>
+            <h4>{props.firstName} {props.lastName}</h4>
+            </div>
             <hr></hr>
+
+            <p id='follower-info'>Following: 84 | Followers: 92 | Activities: 1,054</p>
            </div>
         // users.map((user) => (
         //   <div id='usercard-div-2'>
