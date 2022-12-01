@@ -91,9 +91,6 @@ body {
   height: 2rem;
   border-radius: 5px;
 }
-/* #login-heading {
-  width: 100%;
-} */
 
 form {
   display: flex;
@@ -146,18 +143,9 @@ button {
 }
 
 hr {
-  /* height: 1px; */
-  /* background-color: #989898; */
   border-color: whitesmoke;
   margin: 0;
 }
-
-/* #section-one {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-} */
 
 #sport-select {
   margin-right: 1rem;
@@ -243,8 +231,6 @@ textarea {
   display: flex;
   justify-content: center;
   margin-right: 18rem;
-  /* justify-content: flex-start; */
-  /* align-items: center; */
 }
 
 #one-month-heading {
@@ -269,7 +255,7 @@ textarea {
   background-color: white;
   border-radius: 5px;
   display: flex;
-align-content: center;
+  align-content: center;
 }
 
 #user-info-div {
@@ -352,13 +338,6 @@ align-content: center;
   flex-direction: column;
   align-content: center;
 } 
-/* 
-#user-div {
-  display: flex;
-  align-self: flex-start;
-  justify-content: center;
-  align-self: center;
-} */
 
 #activity-page {
   display: flex;
